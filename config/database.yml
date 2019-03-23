@@ -1,0 +1,41 @@
+# 　default: &default
+#   adapter: mysql2
+#   encoding: utf8
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   username: root
+#   password:
+#   socket: /var/run/mysqld/mysqld.sock
+
+# development:
+#   <<: *default
+#   database: bbs_development
+
+# test:
+#   <<: *default
+#   database: bbs_test
+
+# production:
+#   <<: *default
+#   database: bbs_production
+#   username: bbs
+#   password: <%= ENV['BBS_DATABASE_PASSWORD'] %>
+
+default: &default
+  adapter: mysql2
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  encoding: utf8
+  username: root
+  password:
+ 
+development:
+  <<: *default
+  database: camp
+ 
+test:
+  <<: *default
+  database: camp
+ 
+production:
+  <<: *default
+  database: camp

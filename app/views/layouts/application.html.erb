@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bbs</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+  <h1><%= link_to "ひとことBBS", "/" %></h1> 
+  <ul>
+    <li>
+      <%= link_to "新規投稿", new_tweet_path %>
+      <%= link_to "お問い合わせ", new_question_path %>
+    </li>
+  </ul>
+</header>
+    <%= yield %>
+  </body>
+</html>
